@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
       name: params[:name],
       comments: params[:comments]
     )
-    reviews = movie.reviews << review
+    movie.reviews = movie.reviews << review
     reviews.to_json
   end
   
