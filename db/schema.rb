@@ -20,10 +20,13 @@ ActiveRecord::Schema.define(version: 2023_02_08_061042) do
     t.integer "year"
     t.text "plot"
     t.string "rating"
+    t.boolean "favorite"
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.string "name"
     t.string "comments"
+    t.integer "movie_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

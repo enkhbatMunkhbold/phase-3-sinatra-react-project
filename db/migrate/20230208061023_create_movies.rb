@@ -6,8 +6,9 @@ class CreateMovies < ActiveRecord::Migration[6.1]
       t.string :img_link
       t.string :genre
       t.integer :year
-      t.text :plot
+      t.text :plot      
       t.string :rating
+      t.boolean :favorite
     end
   end
 end
