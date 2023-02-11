@@ -1,25 +1,23 @@
 class ReviewsController < ApplicationController
   
   get '/movies/:id/reviews' do
-    # movie = Movie.find_by(id: params[:id])
-    # reviews = movie.reviews
-    # reviews.all.to_json
-    reviews = Review.find_by(movie_id: params[:id])
+    reviews = Review.find_by(movie_id: params[:movie_id])
     reviews.all.to_json
   end
 
-  get '/movies/:id/reviews/:movie_id' do
-    Review.find_by(movie_id: params[:movie_id])
+  get '/movies/:movie_id/reviews/:id' do
+    Review.find(params[:id]).to_json
   end
 
   post '/movies/:id/reviews' do
-    movie = Movie.find_by(id: params[:id])
+    movie = Movie.find(params[:id])
     review = Review.create(
       name: params[:name],
-      comments: params[:comments]
+      comments: params[:comments],
+      movie_id: movie.id
     )
     movie.reviews = movie.reviews << review
-    reviews.to_json
+    movie.reviews.to_json
   end
   
 end

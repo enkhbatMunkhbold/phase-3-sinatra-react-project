@@ -11,9 +11,9 @@ class MoviesController < ApplicationController
   #                 {"id": 2, author_id: 1, "title": "So I was thinking"}]}
 
   get '/movies/:id' do
-    movie = Movie.find_by(id: params[:id])
+    movie = Movie.find(params[:id])
     if movie
-      movie.to_json
+      movie.to_json(:include => :reviews)
     else
       "404 - Movie not found!"
     end
@@ -28,7 +28,7 @@ class MoviesController < ApplicationController
       year: params[:year],
       plot: params[:plot],      
       rating: params[:rating],
-      favorite: params[:favorite]      
+      favorite: params[:favorite] 
     ).to_json
   end
 
