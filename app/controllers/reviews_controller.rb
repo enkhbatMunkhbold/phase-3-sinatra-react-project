@@ -1,8 +1,9 @@
 class ReviewsController < ApplicationController
   
   get '/movies/:id/reviews' do
-    reviews = Review.find_by(movie_id: params[:movie_id])
-    reviews.all.to_json
+    reviews = Review.all
+    movie_reviews = reviews.find_by(movie_id: params[:movie_id])
+    movie_reviews.to_json
   end
 
   get '/movies/:movie_id/reviews/:id' do

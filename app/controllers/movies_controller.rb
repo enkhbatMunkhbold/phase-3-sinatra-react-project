@@ -4,12 +4,6 @@ class MoviesController < ApplicationController
     Movie.all.to_json(:include => :reviews)
   end
 
-  # konata.to_json(:include => :posts)
-  # # => {"id": 1, "name": "Konata Izumi", "age": 16,
-  #       "created_at": "2006/08/01", "awesome": true,
-  #       "posts": [{"id": 1, "author_id": 1, "title": "Welcome to the weblog"},
-  #                 {"id": 2, author_id: 1, "title": "So I was thinking"}]}
-
   get '/movies/:id' do
     movie = Movie.find(params[:id])
     if movie
