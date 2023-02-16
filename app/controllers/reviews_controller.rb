@@ -5,11 +5,10 @@ class ReviewsController < ApplicationController
     movie_reviews.to_json
   end
 
-  get '/movie/:id/reviews/' do
-    # movie = Movie.find(params[:id])
-    review = Review.find(params[:id])
+  delete '/movies/:movie_id/reviews/:id' do   
+    movie = Movie.find(params[:movie_id])
+    review = movie.reviews.find(params[:id])       
     review.destroy
-    review.to_json
   end
 
   post '/movies/:id/reviews' do
