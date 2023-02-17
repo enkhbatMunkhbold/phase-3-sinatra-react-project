@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2023_02_08_061042) do
     t.string "name"
     t.text "comment"
     t.integer "movie_id"
+    t.boolean "edit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
