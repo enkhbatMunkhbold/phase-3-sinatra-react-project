@@ -5,12 +5,11 @@ class ReviewsController < ApplicationController
     movie_reviews.to_json
   end
 
-  # get '/movies/:movie_id/reviews/:id' do
-  #   movie = Movie.find(params[:movie_id])    
-  #   review = movie.reviews.find(params[:id])
-  #   binding.pry
-  #   movie.reviews.review.to_json
-  # end
+  get '/movies/:movie_id/reviews/:id' do
+    movie = Movie.find(params[:movie_id])    
+    review = movie.reviews.find(params[:id])
+    review.to_json
+  end
 
   delete '/movies/:movie_id/reviews/:id' do   
     movie = Movie.find(params[:movie_id])
@@ -29,13 +28,11 @@ class ReviewsController < ApplicationController
     movie.reviews.to_json
   end
 
-  # patch '/movies/:movie_id/reviews/:id' do
-  #   movie = Movie.find(params[:movie_id])
-  #   review = movie.reviews.find(params[:id])
-  #   review.update(
-  #     comment: params[:comment]
-  #   )
-  #   movie.review.to_json
-  # end
+  patch '/movies/:movie_id/reviews/:id' do
+    movie = Movie.find(params[:movie_id])
+    review = movie.reviews.find(params[:id])
+    review.update(comment: params[:comment])
+    review.to_json
+  end
   
 end
