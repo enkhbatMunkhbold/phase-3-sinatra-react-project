@@ -33,8 +33,7 @@ class MoviesController < ApplicationController
   end
 
   delete '/movies/:id' do
-    movie = Movie.find(params[:id])
-    movie.destroy
+    Movie.find(params[:id]).destroy
   end
   
 end
