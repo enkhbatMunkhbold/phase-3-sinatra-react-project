@@ -35,7 +35,6 @@ class MoviesController < ApplicationController
   delete '/movies/:id' do
     movie = Movie.find(params[:id])
     movie.destroy
-    movie.to_json
   end
   
 end
