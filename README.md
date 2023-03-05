@@ -40,3 +40,4 @@ If the user wants to delete one of the reviews, then he/she needs to bring the m
 If user wants to edit his/her review comment, then he or she can move a mouse pointer over the review, which want to edit and if click on the review it will show underline and blinking text cursor. When user finishes editing review, then he/she just hits **ENTER** key and the review updates. It also updates in the server side using Sinatra framework based on Rack,   
 
 ## Demo  
+![Movie Review GIF](https://user-images.githubusercontent.com/33409864/222945314-1e74b6d5-1711-41ce-a27a-8c107ea02a7e.gif)
